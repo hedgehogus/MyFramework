@@ -19,4 +19,8 @@ export class Eventing {
             callback();
         });
     }
+
+    clearEvents = (): void => {
+        this.events = {};
+    }
 }

@@ -15,7 +15,8 @@ interface Sync<T> {
 
 interface Events {
     on: (eventName: string, callback: Callback) => void;  
-    trigger: (eventName: string) => void;  
+    trigger: (eventName: string) => void; 
+    clearEvents: () => void; 
 }
 
 
@@ -29,6 +30,8 @@ export class Model<T extends HasId> {
     on = this.events.on;
 
     trigger = this.events.trigger;
+
+    clearEvents = this.events.clearEvents;
 
     get = this.attributes.get;
 
